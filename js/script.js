@@ -1,13 +1,10 @@
 const container = document.getElementById('container')
 const searchButton = document.getElementById('search')
 const loadMore = document.getElementById('load-more')
-const countCharacters = 100
-
-const fetchCharacters = async () => {
-    for (let i = 1; i <= countCharacters; i ++) {
-        await getCharacters(i)
-    }
-}
+const MenuMobile = document.querySelector('.mobile-menu')
+const Menu = document.querySelector('.menu');
+const interruptor = document.getElementById('mode-theme')
+const root = document.documentElement
 
 const API = 'https://rickandmortyapi.com/api'
 
@@ -22,7 +19,6 @@ const defaultFilters = {
 async function getCharacters({name, species, gender, status, page = 1}) {
     const response = await fetch(`${API}/character?name=${name}&species=${species}&gender=${gender}&status=${status}&page=${page}`);
     const characters = await response.json()
-    console.log(characters)
     return characters.results
 }
 
@@ -33,8 +29,8 @@ async function handleLoadMore() {
 }
 
 async function render({characters}) {
-    characters.forEach((character) => {
 
+    characters.forEach((character) => {
         return container.innerHTML += `
         <div class="cards">
             <div class="character-img">
@@ -68,18 +64,19 @@ function addListeners() {
     })
 
     loadMore.addEventListener('click', handleLoadMore)
+
+    Menu.addEventListener('click', () => {
+        if (MenuMobile.classList.contains('open')) {
+            MenuMobile.classList.remove('open')
+        } else {
+            MenuMobile.classList.add('open')
+        }
+    })
+
+    interruptor.addEventListener('click', () => {
+        root.classList.toggle('tema-claro')
+    })
 }
-
-function menuShow() {
-    const MenuMobile = document.querySelector('.mobile-menu')
-    if (MenuMobile.classList.contains('open')) {
-        MenuMobile.classList.remove('open')
-    } else {
-        MenuMobile.classList.add('open')
-    }
-}
-
-
 
 async function main() {
     const characters = await getCharacters(defaultFilters)

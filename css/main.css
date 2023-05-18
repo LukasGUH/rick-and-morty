@@ -4,6 +4,10 @@
   margin-bottom: 4em;
 }
 
+.space-mobile {
+  display: none;
+}
+
 .logo-img {
   display: flex;
   align-items: center;
@@ -22,12 +26,14 @@
 }
 
 .input {
-  padding: 25px 10px;
-  width: 300px;
+  /* padding: 1px 5px; */
+  width: 350px;
   height: 40px;
-  font-size: 1.125rem;
+  font-size: 1.4rem;
   border-radius: 50px;
   border: 3px solid var(--btn-color);
+  border-radius: 100px 20px;
+  text-align: center;
 }
 
 .container__cards {
@@ -43,7 +49,8 @@
   display: flex;
   width: 600px;
   border-radius: 10px;
-  background-color: var(--filter-light-switch);
+  background-color: var(--color-card);
+  box-shadow: 1px 1px 10px 5px var(--box-shadow);
 }
 
 .character-img img {
@@ -143,6 +150,7 @@
   
 .right::after, .button-next::after {
   content: 'Carregar mais';
+  color: var(--color-text);
   display: block;
   position: absolute;
   white-space: nowrap;
@@ -171,8 +179,7 @@
 .right::after {
   top: -30px;
   left: calc(-66% - 20px);
-  
-  background-color: var(--bg-color);
+  background-color: var(--color-background);
   color:transparent;
   transition: transform .4s ease-out;
   transform: translate(0, -90%) rotate(0deg)
@@ -196,10 +203,9 @@
   pointer-events: none;
   opacity: .6;
   background:
-  radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-  radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-  radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
-  
+  radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--color-bubbles) 3px, var(--color-bubbles) 4px, transparent 4px),
+  radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--color-bubbles) 3px, var(--color-bubbles) 4px, transparent 4px),
+  radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--color-bubbles) 5px, var(--color-bubbles) 6px, transparent 6px);
   width: 100%;
   height: 300%;
   top: 0;
@@ -220,6 +226,7 @@
 @media screen and (max-width: 750px) {
 
   .space-mobile {
+    display: block;
     margin: 20px 25px;
     background-color: var(--color-background-second);
     border-radius: 30px 60px;
@@ -238,7 +245,6 @@
   }
   
   .input {
-    padding: 25px 10px;
     width: 300px;
     height: 40px;
     font-size: 1.125rem;
