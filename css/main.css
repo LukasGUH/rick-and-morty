@@ -1,0 +1,256 @@
+.container {
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4em;
+}
+
+.logo-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img img {
+  width: 500px;
+}
+
+.search-input {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input {
+  padding: 25px 10px;
+  width: 300px;
+  height: 40px;
+  font-size: 1.125rem;
+  border-radius: 50px;
+  border: 3px solid var(--btn-color);
+}
+
+.container__cards {
+  margin: 9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cards {
+  display: flex;
+  width: 600px;
+  border-radius: 10px;
+  background-color: var(--filter-light-switch);
+}
+
+.character-img img {
+  width: 220px;
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  margin: 20px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.name h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+  gap: 5px;
+}
+
+.status-alive {
+  color: var(--color-text-link);
+  font-size: 30px;
+}
+
+.local {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.local h2 {
+  font-size: 1.063rem;
+  font-weight: 600;
+  color: var(--color-text-second);
+}
+
+.encontrado {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.first-time-seen {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1.063rem;
+  font-weight: 600;
+  color: var(--color-text-second);
+}
+.botao {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.button-next {
+  position:relative;
+  padding: 10px 20px;  
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.563rem;  
+  color: var(--text-color);
+  background-color: var(--btn-color);
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+  border-radius: 50px; 
+  z-index: 0;  
+  overflow: hidden;   
+}
+  
+.button-next:focus {
+  outline-color: transparent;
+  box-shadow: var(--btn-color) 2px 2px 22px;
+}
+  
+.right::after, .button-next::after {
+  content: 'Carregar mais';
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  padding: 40px 40px;
+  pointer-events:none;
+}
+  
+.button-next::after{
+  font-weight: 200;
+  top: -30px;
+  left: -20px;
+} 
+  
+.right, .left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.right {
+  left: 66%;
+}
+.left {
+  right: 66%;
+}
+.right::after {
+  top: -30px;
+  left: calc(-66% - 20px);
+  
+  background-color: var(--bg-color);
+  color:transparent;
+  transition: transform .4s ease-out;
+  transform: translate(0, -90%) rotate(0deg)
+}
+  
+.button-next:hover .right::after {
+  transform: translate(0, -47%) rotate(0deg)
+}
+  
+.button-next .right:hover::after {
+  transform: translate(0, -50%) rotate(-7deg)
+}
+  
+.button-next .left:hover ~ .right::after {
+  transform: translate(0, -50%) rotate(7deg)
+}
+  
+  /* bubbles */
+.button-next::before {
+  content: '';
+  pointer-events: none;
+  opacity: .6;
+  background:
+  radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+  radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+  radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+  
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 5s linear infinite both;
+}
+  
+@keyframes bubbles {
+  from {
+    transform: translate();
+  }
+  to {
+    transform: translate(0, -66.666%);
+  }
+}
+
+@media screen and (max-width: 750px) {
+
+  .space-mobile {
+    margin: 20px 25px;
+    background-color: var(--color-background-second);
+    border-radius: 30px 60px;
+}
+
+  .logo-img {
+    margin-top: 5em;
+  }
+
+  .logo-img img {
+    width: 300px;
+  }
+
+  .character-img img{
+    width: 300px;
+  }
+  
+  .input {
+    padding: 25px 10px;
+    width: 300px;
+    height: 40px;
+    font-size: 1.125rem;
+    border-radius: 50px;
+    border: 3px solid var(--btn-color);
+    border-radius: 100px 20px;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    flex-wrap: wrap;
+  }
+}

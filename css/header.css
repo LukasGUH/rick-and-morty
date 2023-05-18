@@ -1,0 +1,122 @@
+:root {
+    --color-background: #121212;
+    --color-background-second: #2b2b2b;
+    --color-text-link: #49ae3a;
+    --color-text: #f7f6f6;
+    --color-text-second: #ababab;
+    --filter-light-switch: #282828 ;
+    --text-color: hsla(210, 50%, 85%, 1);
+    --shadow-color: hsla(210, 40%, 52%, .4);
+    --btn-color: hsl(110, 65%, 35%);
+    --bg-color: #141218;
+}
+
+.tema-claro {
+    --color-background: #222222;
+    --color-background-link: #181818;
+    --color-text-link: #fff;
+    --filter-light-switch: grayscale(1) opacity(0.25);
+}
+
+.nav-bar {
+    padding: 13px;
+    margin: 30px 100px;
+    background-color: var(--color-background-second);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50px;
+
+}
+
+.img-rick img {
+    width: 100px;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.social-media__icons {
+    display: flex;
+    margin-right: 40px;
+    gap: 5em;
+}
+
+.social-media li {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.social-media li a {
+    color: var(--color-text-link);
+    
+}
+
+.menu-mobile {
+    font-size: 1.5rem;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width: 750px) {
+
+    .nav-bar {
+        margin: 20px 25px;
+    }
+
+    .social-media__icons {
+        display: none;
+    }
+
+    .space-mobile {
+        margin: 20px 25px;
+        background-color: var(--color-background-second);
+        border-radius: 30px 60px;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .menu {
+        font-size: 1.9rem;
+        border: none;
+        background-color: transparent;
+        color: var(--color-text-link);
+        cursor: pointer;
+        margin-right: 15px;
+    }
+
+    .open {
+        display: block;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .8rem;
+        padding: .7rem 0px;
+    }
+
+    .nav-item {
+        font-size: 1.4rem;
+    }
+
+    .nav-item a {
+        color: var(--color-text);
+        transition: all .5s ease;
+    }
+
+    .nav-item a:hover {
+        color: var(--color-text-link);
+    }
+
+}

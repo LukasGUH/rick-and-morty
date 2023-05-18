@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link href="https: //fonts.googleapis.com/css2?family= Inter:wght@300 ; 400;500;600;700 & display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Rick and Morty</title>
+    </head>
+    <body>
+        <header class="nav-bar">
+            <div class="img-rick">
+                <a href="#"><img src="./img/rick.png" alt=""></a>
+            </div>
+            <nav class="social-media">
+                <ul class="social-media__icons">
+                    <li><a href=""><i class="ri-instagram-line"></i></a></li>
+                    <li><a href=""><i class="ri-github-fill"></i></a></li>
+                    <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
+                </ul>
+
+                <div class="mobile-menu-icon">
+                    <button onclick="menuShow()" class="menu"><i class="ri-menu-line"></i></button>
+                </div>
+            </nav>
+        </header>
+        <main class="container">
+            <div class="space-mobile">
+                <div class="mobile-menu">
+                    <ul>
+                        <li class="nav-item"><a href=""><i class="ri-instagram-line"></i> Instagram</a></li>
+                        <li class="nav-item"><a href=""><i class="ri-github-fill"></i> Github</a></li>
+                        <li class="nav-item"><a href=""><i class="ri-linkedin-fill"></i> Linkedin</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo-img">
+                <img src="./img/Logo (1).png" alt="">
+            </div>
+            <div class="search-input">
+                <input class="input" id="search" type="search" placeholder="Filter by name...">
+            </div>
+            <section class="container__cards" id="container">
+                <!-- <div class="cards">
+                    <div class="character-img">
+                        <img src="https://rickandmortyapi.com/api/character/avatar/27.jpeg" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="name">
+                            <h1>Morty</h1>
+                            <span class="status"><span class="status-alive">•</span> vivo</span>
+                        </div>
+                        <div class="local">
+                            <h2>Última localização conhecida:</h2>
+                            <span class="encontrado">Cidadela de Ricks</span>
+                        </div>
+                        <div class="first-time-seen">
+                            <h3>Visto pela primeira vez</h3>
+                            <span class="encontrado">Fechar contadores de Rick do tipo Rick</span>
+                        </div>
+                    </div>
+                </div> -->
+            </section>
+                <div class="button">
+                    <button id="load-more" class="button-next" href="">
+                        <div class="left"></div>Carregar mais<div class="right"></div>
+                    </button>
+                </div>
+        </main>
+        <footer class="baseboard">
+            
+        </footer>
+
+        <script src="./js/script.js"></script>
+    </body>
+</html>
